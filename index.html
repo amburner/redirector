@@ -1,38 +1,10 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="UTF-8">
-  <title>Redirecting to Live Stream...</title>
-  <style>
-    body {
-      background: black;
-      color: lime;
-      font-family: monospace;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      margin: 0;
-    }
-  </style>
-</head>
-<body>
-  <div>🔄 Redirecting to your live stream...</div>
-
-  <script>
-    fetch("https://yourdomain.github.io/ngrok.json")
-      .then(res => res.json())
-      .then(data => {
-        if (data.url) {
-          window.location.replace(data.url);
-        } else {
-          document.body.innerHTML = "⚠️ No URL found in ngrok.json";
-        }
-      })
-      .catch(err => {
-        console.error("Redirect error:", err);
-        document.body.innerHTML = "⚠️ Failed to fetch live stream address.";
-      });
-  </script>
-</body>
+  <head>
+    <meta http-equiv="refresh" content="0; url=https://2675-76-118-91-7.ngrok-free.app">
+    <title>Redirecting...</title>
+  </head>
+  <body style="background:black;color:white;">
+    Redirecting to <a href="https://2675-76-118-91-7.ngrok-free.app">https://2675-76-118-91-7.ngrok-free.app</a>...
+  </body>
 </html>
