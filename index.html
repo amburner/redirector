@@ -1,50 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>Redirecting...</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <style>
-    body {
-      background: black;
-      color: white;
-      font-family: sans-serif;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      margin: 0;
-    }
-    a {
-      color: cyan;
-    }
-  </style>
-</head>
-<body>
-  <div id="message">⚠️ Fetching live stream address...</div>
-  <script>
-    fetch("ngrok.json")
-      .then(response => {
-        if (!response.ok) throw new Error("Network response was not ok");
-        return response.json();
-      })
-      .then(data => {
-        if (data.url) {
-          document.getElementById("message").innerHTML =
-            `🔁 Redirecting to <a href="${data.url}">${data.url}</a>...`;
-          setTimeout(() => {
-            window.location.href = data.url;
-          }, 1000);
-        } else {
-          throw new Error("URL not found in JSON");
-        }
-      })
-      .catch(error => {
-        console.error("Redirect failed:", error);
-        document.getElementById("message").innerText =
-          "❌ Failed to fetch live stream address.";
-      });
-  </script>
-</body>
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv='refresh' content='0; url=https://5f4a-76-118-91-7.ngrok-free.app'>
+    <title>Redirecting...</title>
+  </head>
+  <body style='background:black;color:white;'>
+    Redirecting to <a href='https://5f4a-76-118-91-7.ngrok-free.app'>https://5f4a-76-118-91-7.ngrok-free.app</a>...
+  </body>
 </html>
