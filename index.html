@@ -1,40 +1,30 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="UTF-8">
-  <title>Redirecting to Live Stream</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <style>
-    body {
-      background: black;
-      color: lime;
-      font-family: monospace;
-      text-align: center;
-      padding: 2em;
-    }
-    a {
-      color: #00ffcc;
-    }
-  </style>
-</head>
-<body>
-  <h2>🔁 Connecting to stream...</h2>
-  <p>If you are not redirected in 3 seconds, <span id="manual"></span></p>
-
-  <script>
-    fetch("ngrok.json")
-      .then(res => res.json())
-      .then(data => {
-        if (data.url) {
-          document.getElementById("manual").innerHTML = `<a href="${data.url}">${data.url}</a>`;
-          setTimeout(() => window.location.href = data.url, 2000);
-        } else {
-          document.body.innerHTML = "<h2>⚠️ No live stream URL found</h2>";
-        }
-      })
-      .catch(() => {
-        document.body.innerHTML = "<h2>⚠️ Failed to fetch live stream address.</h2>";
-      });
-  </script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="refresh" content="0; url=https://example.ngrok-free.app" />
+    <title>Redirecting...</title>
+    <style>
+      html, body {
+        background: black;
+        color: white;
+        font-family: sans-serif;
+        margin: 0;
+        padding: 2em;
+        text-align: center;
+      }
+      a {
+        color: #00ffff;
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+    <p>Redirecting to your live stream:</p>
+    <p>
+      <a href="https://example.ngrok-free.app">
+        https://example.ngrok-free.app
+      </a>
+    </p>
+  </body>
 </html>
